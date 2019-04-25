@@ -2,32 +2,16 @@
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
         <h1>Que voulez vous faire ?</h1>
-        <button type="button" class="btnhome" id="liste" @click="onSuppliersListClick">Consulter la liste des fournisseurs</button>
-        <button type="button" class="btnhome" id="carte" @click="onMapClick">Afficher la carte</button>
+        <router-link to="/SuppliersList" class="btnhome">Consulter la liste des fournisseurs</router-link>
+        <router-link to="/SuppliersMap" class="btnhome">Afficher la carte</router-link>
+        <br>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import SuppliersList from './components/SuppliersList.vue'
-    import SuppliersMap from './components/SuppliersMap.vue'
 
-    export default {
-        name: 'app',
-        components: {
-            SuppliersList,
-            SuppliersMap
-        },
-        methods:{
-            onSuppliersListClick: function () {
-                window.alert("Clicked!!");
-            },
-            onMapClick: function () {
-                window.alert("Clicked!!");
-            }
 
-        }
-
-    }
 
 </script>
 

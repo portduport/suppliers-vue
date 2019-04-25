@@ -1,14 +1,22 @@
 <template>
-    <div class="suppliersList">
+    <div class="supplier">
         <h1>Liste des fournisseurs</h1>
+        <Supplier></Supplier>
     </div>
 </template>
 
 <script>
+
+    import Supplier from './Supplier.vue'
+
+
     export default {
         name: 'SuppliersList',
         props: {
             msg: String
+        },
+        components:{
+            Supplier
         }
     }
 </script>
