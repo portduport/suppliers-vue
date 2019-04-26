@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
+import * as VueGoogleMaps from 'vue2-google-maps'
+
 
 Vue.use(VueRouter)
 
@@ -26,3 +28,9 @@ new Vue({
     router,
     render: h => h(App),
 }).$mount('#app')
+
+Vue.use(VueGoogleMaps, {
+    load: {
+        key: 'AIzaSyCdzsL-0R6AbmGXcz0r7-VHML1hi1XpDzc',
+    }
+})
