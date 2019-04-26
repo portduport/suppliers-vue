@@ -1,7 +1,9 @@
 <template>
     <div class="supplier">
         <h1>Liste des fournisseurs</h1>
-        <Supplier></Supplier>
+        <div v-for="supplier of suppliers" :key="supplier.id">
+        <Supplier v-bind:name="supplier.name" v-bind:status="supplier.status" v-bind:checkedAt="supplier.checkedAt"></Supplier>
+        </div>
     </div>
 </template>
 
@@ -13,10 +15,28 @@
     export default {
         name: 'SuppliersList',
         props: {
-            msg: String
+            msg: String,
         },
         components:{
             Supplier
+        },
+        data: function () {
+            return {
+                suppliers: [
+                    {
+                        id: 1,
+                        name: "Fournisseur 1",
+                        status: true,
+                        checkedAt: new Date().toLocaleString()
+                    },
+                    {
+                        id: 2,
+                        name: "Fournisseur 2",
+                        status: false,
+                        checkedAt: new Date().toLocaleString()
+                    }
+                ]
+        }
         }
     }
 </script>
