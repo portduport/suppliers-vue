@@ -16,7 +16,6 @@
             status: Boolean, // est ce qu'il y a du stock
             checkedAt: String // date de la dernière mise à jour du stock
         },
-
     }
 </script>
 

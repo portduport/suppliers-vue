@@ -31,6 +31,6 @@ new Vue({
 
 Vue.use(VueGoogleMaps, {
     load: {
-        key: 'AIzaSyCdzsL-0R6AbmGXcz0r7-VHML1hi1XpDzc',
+        key: 'AIzaSyBzlLYISGjL_ovJwAehh6ydhB56fCCpPQw'
     }
 })
