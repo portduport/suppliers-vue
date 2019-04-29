@@ -2,11 +2,10 @@
     <div class="map">
         <h1>Carte des fournisseurs</h1>
         <gmapMap :center="{lat:10, lng:10}" :zoom="7" map-type-id="terrain" style="width: 100%; height: 800px">
-            <GmapMarker v-for="supplier in suppliers" :key="supplier.id" :position="{lat:supplier.latitude, lng:supplier.longitude}"></GmapMarker>
+            <GmapMarker v-for="supplier in suppliers" :key="supplier.id"
+                        :position="{lat:supplier.latitude, lng:supplier.longitude}"></GmapMarker>
         </gmapMap>
     </div>
-
-
 </template>
 
 <script>

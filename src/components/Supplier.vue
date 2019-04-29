@@ -1,7 +1,7 @@
 <template>
     <div id="Supplier">
-    <h1>{{ name }}</h1>
-    <h3 v-if="status" style="color: green;">A de stock : OK</h3>
+        <h1>{{ name }}</h1>
+        <h3 v-if="status" style="color: green;">A de stock : OK</h3>
         <h3 v-else style="color: red;">A de stock : KO</h3>
         <h5 style="color: grey">{{checkedAt}}</h5>
     </div>
@@ -20,7 +20,7 @@
 </script>
 
 <style scoped>
-    #Supplier{
+    #Supplier {
         margin-top: 2em;
         border: 2px solid darkred;
     }

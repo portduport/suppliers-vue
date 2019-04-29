@@ -12,7 +12,6 @@
 <script>
 
 
-
 </script>
 
 <style>
@@ -25,7 +24,7 @@
         margin-top: 60px;
     }
 
-    .btnhome{
+    .btnhome {
         background-color: green;
         padding: 15px 15px;
         margin: 0 5px;

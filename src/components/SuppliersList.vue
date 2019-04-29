@@ -2,7 +2,8 @@
     <div class="supplier">
         <h1>Liste des fournisseurs</h1>
         <div v-for="supplier of suppliers" :key="supplier.id">
-        <Supplier v-bind:name="supplier.name" v-bind:status="supplier.status" v-bind:checkedAt="supplier.checkedAt"></Supplier>
+            <Supplier v-bind:name="supplier.name" v-bind:status="supplier.status" v-bind:checkedAt="supplier.checkedAt"
+                      v-bind:longitude="supplier.longitude" v-bind:latitude="supplier.latitude"></Supplier>
         </div>
     </div>
 </template>
@@ -10,7 +11,7 @@
 <script>
 
     import Supplier from './Supplier.vue'
-    import { format } from 'timeago.js';
+    import {format} from 'timeago.js'
 
 
     export default {
@@ -18,7 +19,7 @@
         props: {
             msg: String,
         },
-        components:{
+        components: {
             Supplier
         },
         data: function () {
@@ -28,7 +29,7 @@
                         id: 1,
                         name: "Fournisseur 1",
                         status: true,
-                        checkedAt: format(new Date().toLocaleString(),'fr_FR'),
+                        checkedAt: format(new Date().toLocaleString(), 'fr_FR'),
                         latitude: 10,
                         longitude: 10
                     },
@@ -41,7 +42,7 @@
                         longitude: 9.6
                     }
                 ]
-        }
+            }
         }
     }
 </script>

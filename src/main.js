@@ -14,9 +14,9 @@ import Supplier from './components/Supplier.vue'
 
 
 const routes = [
-    { path: '/SuppliersList', component: SuppliersList },
-    { path: '/SuppliersMap', component: SuppliersMap },
-    { path: '/Supplier', component: Supplier }
+    {path: '/SuppliersList', component: SuppliersList},
+    {path: '/SuppliersMap', component: SuppliersMap},
+    {path: '/Supplier', component: Supplier}
 ]
 
 const router = new VueRouter({
