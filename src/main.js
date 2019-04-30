@@ -3,6 +3,13 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import * as VueGoogleMaps from 'vue2-google-maps'
 
+Vue.use(VueGoogleMaps, {
+    load: {
+        key: 'AIzaSyDf43lPdwlF98RCBsJOFNKOkoEjkwxb5Sc',
+        libraries: 'places',
+    }
+})
+
 
 Vue.use(VueRouter)
 
@@ -29,8 +36,5 @@ new Vue({
     render: h => h(App),
 }).$mount('#app')
 
-Vue.use(VueGoogleMaps, {
-    load: {
-        key: 'AIzaSyBzlLYISGjL_ovJwAehh6ydhB56fCCpPQw'
-    }
-})
+
+

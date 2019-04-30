@@ -2,8 +2,7 @@
     <div class="supplier">
         <h1>Liste des fournisseurs</h1>
         <div v-for="supplier of suppliers" :key="supplier.id">
-            <Supplier v-bind:name="supplier.name" v-bind:status="supplier.status" v-bind:checkedAt="supplier.checkedAt"
-                      v-bind:longitude="supplier.longitude" v-bind:latitude="supplier.latitude"></Supplier>
+            <Supplier v-bind:name="supplier.name" v-bind:status="supplier.status" v-bind:checkedAt="supplier.checkedAt"></Supplier>
         </div>
     </div>
 </template>
@@ -11,7 +10,7 @@
 <script>
 
     import Supplier from './Supplier.vue'
-    import {format} from 'timeago.js'
+    import axios from 'axios'
 
 
     export default {
@@ -24,25 +23,32 @@
         },
         data: function () {
             return {
-                suppliers: [
-                    {
-                        id: 1,
-                        name: "Fournisseur 1",
-                        status: true,
-                        checkedAt: format(new Date().toLocaleString(), 'fr_FR'),
-                        latitude: 10,
-                        longitude: 10
-                    },
-                    {
-                        id: 2,
-                        name: "Fournisseur 2",
-                        status: false,
-                        checkedAt: new Date().toLocaleString(),
-                        latitude: 11,
-                        longitude: 9.6
-                    }
-                ]
+                suppliers: [],
+                loading: false,
+                error: null,
             }
+        },
+        // Fetches posts when the component is created.
+        created() {
+            axios.get(`https://api-suppliers.herokuapp.com/api/suppliers`)
+                .then(response => {
+                    // JSON responses are automatically parsed.
+                    this.suppliers = response.data
+                })
+                .catch(error => {
+                    console.log(error)
+                    this.error = true
+                })
+                .finally(() => this.loading = false)
+
+            // async / await version (created() becomes async created())
+            //
+            // try {
+            //   const response = await axios.get(`http://jsonplaceholder.typicode.com/posts`)
+            //   this.posts = response.data
+            // } catch (e) {
+            //   this.errors.push(e)
+            // }
         }
     }
 </script>
