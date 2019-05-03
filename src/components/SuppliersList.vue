@@ -10,7 +10,7 @@
 <script>
 
     import Supplier from './Supplier.vue'
-    import axios from 'axios'
+    import { mapState } from 'vuex'
 
 
     export default {
@@ -21,34 +21,11 @@
         components: {
             Supplier
         },
-        data: function () {
-            return {
-                suppliers: [],
-                loading: false,
-                error: null,
-            }
-        },
-        // Fetches posts when the component is created.
-        created() {
-            axios.get(`https://api-suppliers.herokuapp.com/api/suppliers`)
-                .then(response => {
-                    // JSON responses are automatically parsed.
-                    this.suppliers = response.data
-                })
-                .catch(error => {
-                    console.log(error)
-                    this.error = true
-                })
-                .finally(() => this.loading = false)
-
-            // async / await version (created() becomes async created())
-            //
-            // try {
-            //   const response = await axios.get(`http://jsonplaceholder.typicode.com/posts`)
-            //   this.posts = response.data
-            // } catch (e) {
-            //   this.errors.push(e)
-            // }
+        computed: mapState([
+            'suppliers'
+        ]),
+        mounted: function () {
+            this.$store.dispatch('LOAD_SUPPLIERS')
         }
     }
 </script>

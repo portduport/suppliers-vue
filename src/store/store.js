@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import VuexGeolocation from 'vuex-geolocation';
+
 
 Vue.use(Vuex)
 export const store = new Vuex.Store({
@@ -23,6 +25,9 @@ export const store = new Vuex.Store({
     },
     getters: {
 
-    }
+        }
 })
 
+
+const vuexGeolocation = VuexGeolocation.sync(store);
+Vue.use(vuexGeolocation)

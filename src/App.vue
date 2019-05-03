@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
-        <h1>Que voulez vous faire ?</h1>
+        <h1>Que voulez vous faire ? </h1>
         <router-link to="/SuppliersList" class="btnhome">Consulter la liste des fournisseurs</router-link>
         <router-link to="/SuppliersMap" class="btnhome">Afficher la carte</router-link>
         <br>
@@ -10,7 +10,25 @@
 </template>
 
 <script>
-
+    export default {
+        computed: {
+            location () {
+                return {
+                    lat: this.$store.state.geolocation.lat,
+                    lng: this.$store.state.geolocation.lng,
+                    acc: this.$store.state.geolocation.acc,
+                    alt: this.$store.state.geolocation.alt,
+                    altAcc: this.$store.state.geolocation.altAcc,
+                    head: this.$store.state.geolocation.head,
+                    spd: this.$store.state.geolocation.spd,
+                    ts: this.$store.state.geolocation.ts
+                };
+            },
+            error () {
+                return this.$store.state.geolocation.error;
+            }
+        }
+    }
 
 </script>
 
