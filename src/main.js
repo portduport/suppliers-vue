@@ -18,12 +18,14 @@ Vue.config.productionTip = false
 import SuppliersList from './components/SuppliersList.vue'
 import SuppliersMap from './components/SuppliersMap.vue'
 import Supplier from './components/Supplier.vue'
+import AddSupplier from "./components/AddSupplier";
 
 
 const routes = [
     {path: '/SuppliersList', component: SuppliersList},
     {path: '/SuppliersMap', component: SuppliersMap},
-    {path: '/Supplier', component: Supplier}
+    {path: '/Supplier', component: Supplier},
+    {path: '/AddSupplier', component: AddSupplier}
 ]
 
 const router = new VueRouter({

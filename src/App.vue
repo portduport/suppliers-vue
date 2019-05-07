@@ -2,8 +2,10 @@
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
         <h1>Que voulez vous faire ? </h1>
-        <router-link to="/SuppliersList" class="btnhome">Consulter la liste des fournisseurs</router-link>
-        <router-link to="/SuppliersMap" class="btnhome">Afficher la carte</router-link>
+        <router-link to="/SuppliersList" class="waves-effect waves-light btn-large" style="margin-right: 5px"><i class="material-icons left">search</i>Consulter la liste des fournisseurs</router-link>
+        <router-link to="/SuppliersMap" class="waves-effect waves-light btn-large" style="margin-right: 5px"><i class="material-icons left">map</i>Afficher la carte</router-link>
+        <router-link to="/AddSupplier" class="waves-effect waves-light btn-large"><i class="material-icons left">add</i>Ajouter un Supplier</router-link>
+
         <br>
         <router-view></router-view>
     </div>
@@ -40,16 +42,6 @@
         text-align: center;
         color: #2c3e50;
         margin-top: 60px;
-    }
-
-    .btnhome {
-        background-color: green;
-        padding: 15px 15px;
-        margin: 0 5px;
-        color: white;
-        font-weight: 900;
-        font-size: 0.8em;
-        cursor: pointer;
     }
 
 </style>
