@@ -10,7 +10,7 @@
                         <h5 style="color: grey; font-size: 1rem">{{checkedAt}}</h5>
                     </div>
                     <div class="card-action">
-                        <a class="waves-effect waves-light btn-small" style="margin-right: 5px"><i class="material-icons left">create</i>EDIT</a>
+                        <router-link :to="{name: 'addsupplier', params:{ id }}" class="waves-effect waves-light btn-small" style="margin-right: 5px" href=""><i class="material-icons left">create</i>EDIT</router-link>
                         <a class="waves-effect waves-light btn-small"><i class="material-icons left">delete</i>REMOVE</a>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
     export default {
         name: "Supplier",
         props: {
-            id: Number,
+            id: String,
             name: String,
             status: Boolean, // est ce qu'il y a du stock
             checkedAt: String // date de la dernière mise à jour du stock

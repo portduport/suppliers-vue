@@ -9,7 +9,7 @@
             </select>
         </div>
         <div v-for="supplier of filterSuppliers()" :key="supplier.id">
-            <Supplier v-bind:name="supplier.name" v-bind:status="supplier.status"
+            <Supplier v-bind:name="supplier.name" v-bind:status="supplier.status" v-bind:id="supplier.id"
                       v-bind:checkedAt="supplier.checkedAt"></Supplier>
         </div>
     </div>

@@ -25,7 +25,7 @@ const routes = [
     {path: '/SuppliersList', component: SuppliersList},
     {path: '/SuppliersMap', component: SuppliersMap},
     {path: '/Supplier', component: Supplier},
-    {path: '/AddSupplier', component: AddSupplier}
+    {path: '/AddSupplier/:id', name: 'addsupplier', component: AddSupplier}
 ]
 
 const router = new VueRouter({

@@ -6,6 +6,7 @@
                 <div class="card">
                     <div class="card-body" style="padding: 2rem;">
                         <br>
+                        <p>{{ $route.params.id }}</p>
                         <form @submit="formSubmit">
                             <div class="input-field col s12">
                                 <input placeholder="" id="name" v-model="name" type="text" class="validate">
